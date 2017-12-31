@@ -43,7 +43,7 @@ buildscript {
 }
 
 group 'com.ginsberg'
-version '1.0.0-SNAPSHOT'
+version '1.1.0-SNAPSHOT'
 ext.isReleaseVersion = !(project.version =~ /-SNAPSHOT$/)
 
 apply plugin: 'kotlin'
