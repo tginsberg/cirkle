@@ -1,6 +1,7 @@
 # Cirkle
-Cirkle is a circularly-addressable `List` and `MutableList` for Kotlin. **Put something here about Python and AoC.**
+Cirkle is a circularly-addressable `List` and `MutableList` for Kotlin.
 
+Any negative index will wrap around from the end of the `List`, and any overly positive index will continue wrapping around back to the start of the `List`. This is partially inspired by Python and all of the times I could have used this during Advent of Code 2017.
 
 ## Quick Start
 
