@@ -9,7 +9,7 @@ Copy the following into your `build.gradle` or `build.xml`, cirkle has no additi
 
 **Gradle**
 ```groovy
-compile 'com.ginsberg:cirkle:1.0.0'
+compile 'com.ginsberg:cirkle:1.0.1'
 ```
 
 **Maven**
@@ -17,7 +17,7 @@ compile 'com.ginsberg:cirkle:1.0.0'
 <dependency>
     <groupId>com.ginsberg</groupId>
     <artifactId>cirkle</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
