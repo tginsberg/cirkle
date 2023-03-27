@@ -112,8 +112,14 @@ class MutableCircularList<T>(private val list: MutableList<T>): MutableList<T> b
      *
      * @sample samples.Cirkle.MutableCircularList.subList
      */
-    override fun subList(fromIndex: Int, toIndex: Int): MutableList<T> =
-        list.subList(fromIndex.safely(), toIndex.safely())
+    override fun subList(fromIndex: Int, toIndex: Int): MutableList<T> {
+        val fromIndexSafe = fromIndex.safely()
+        val toIndexSafe = toIndex.safely()
+        if(toIndexSafe < fromIndexSafe) {
+            return (list.subList(fromIndexSafe, list.size) + list.subList(0, toIndexSafe)).toMutableList()
+        }
+        return list.subList(fromIndexSafe, toIndexSafe)
+    }
 
     /**
      * Returns a String representation of the object.

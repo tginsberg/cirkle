@@ -84,7 +84,13 @@ class CircularListTest {
     }
 
     @Test
+    fun `subList works when needing to go around back`() {
+        assertThat(testList.subList(2, 4)).containsExactly(3, 1)
+    }
+
+    @Test
     fun `toString delegates to list implementation`() {
         assertThat(testList.toString()).isEqualTo("[1, 2, 3]")
     }
+
 }
