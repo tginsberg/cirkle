@@ -120,7 +120,6 @@ class MutableCircularList<T>(private val list: MutableList<T>): MutableList<T> b
         }.map {
             list[it.safely()]
         }.toMutableList()
-
     }
 
     /**

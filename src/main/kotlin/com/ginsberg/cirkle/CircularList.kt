@@ -25,9 +25,6 @@
 
 package com.ginsberg.cirkle
 
-import kotlin.math.absoluteValue
-import kotlin.math.sign
-
 /**
  * Implementation of a Circularly-addressable [kotlin.collections.List], allowing negative
  * indexes and positive indexes that are larger than the size of the List.
