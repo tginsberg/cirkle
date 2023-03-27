@@ -115,7 +115,7 @@ class MutableCircularListTest {
 
     @Test
     fun `subList with positive index wraps around`() {
-        assertThat(testList.subList(3, -1)).containsExactly(1,3,2,1)
+        assertThat(testList.subList(3, -1)).containsExactly(1, 3, 2, 1)
     }
 
     @Test
