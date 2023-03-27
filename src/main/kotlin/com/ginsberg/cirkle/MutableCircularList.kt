@@ -113,15 +113,11 @@ class MutableCircularList<T>(private val list: MutableList<T>): MutableList<T> b
      * @sample samples.Cirkle.MutableCircularList.subList
      */
     override fun subList(fromIndex: Int, toIndex: Int): MutableList<T> {
-        println("fromIndex: $fromIndex toIndex: $toIndex")
         return if(fromIndex <= toIndex) {
-            println("First if")
             fromIndex until toIndex
         } else {
-            println("Second if")
             fromIndex downTo toIndex + 1
         }.map {
-            println("mapping it $it safely ${it.safely()}")
             list[it.safely()]
         }.toMutableList()
 
