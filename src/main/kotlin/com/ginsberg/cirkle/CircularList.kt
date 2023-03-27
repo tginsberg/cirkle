@@ -25,6 +25,9 @@
 
 package com.ginsberg.cirkle
 
+import kotlin.math.absoluteValue
+import kotlin.math.sign
+
 /**
  * Implementation of a Circularly-addressable [kotlin.collections.List], allowing negative
  * indexes and positive indexes that are larger than the size of the List.
@@ -64,12 +67,13 @@ class CircularList<out T>(private val list: List<T>) : List<T> by list {
      * @sample samples.Cirkle.CircularList.subList
      */
     override fun subList(fromIndex: Int, toIndex: Int): List<T> {
-        val fromIndexSafe = fromIndex.safely()
-        val toIndexSafe = toIndex.safely()
-        if(toIndexSafe < fromIndexSafe) {
-            return list.subList(fromIndexSafe, list.size) + list.subList(0, toIndexSafe)
+        return if(fromIndex <= toIndex) {
+            fromIndex until toIndex
+        } else {
+            fromIndex downTo toIndex + 1
+        }.map {
+            list[it.safely()]
         }
-        return list.subList(fromIndexSafe, toIndexSafe)
     }
 
     /**

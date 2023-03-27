@@ -65,7 +65,12 @@ class CircularListTest {
 
     @Test
     fun `subList with positive index wraps around`() {
-        assertThat(testList.subList(3, -1)).containsExactly(1, 2)
+        assertThat(testList.subList(3, -1)).containsExactly(1, 3, 2, 1)
+    }
+
+    @Test
+    fun `subList can lead to longer list than original`() {
+        assertThat(testList.subList(0, 4)).containsExactly(1, 2, 3, 1)
     }
 
     @Test
@@ -80,7 +85,7 @@ class CircularListTest {
 
     @Test
     fun `subList works with a combination of positive and negative indexes`() {
-        assertThat(testList.subList(0, -1)).containsExactly(1, 2)
+        assertThat(testList.subList(0, -1)).containsExactly(1)
     }
 
     @Test
